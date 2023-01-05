@@ -1,10 +1,12 @@
+import java.util.Objects;
+import java.util.Set;
+
 public class Pasport {
     private String name;
     private String surname;
     private String patronymic;
-    private int birthYear;
-    private static int count=0;
-    private final int pasportNumber;
+    private String birthYear;
+    private Set<String> pasportNumbers;
 
     public String getName() {
         return name;
@@ -18,13 +20,10 @@ public class Pasport {
         return patronymic;
     }
 
-    public int getBirthYear() {
+    public String getBirthYear() {
         return birthYear;
     }
 
-    public static int getCount() {
-        return count;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -34,32 +33,47 @@ public class Pasport {
         this.surname = surname;
     }
 
-    @Override
-    public String toString() {
-        return "Pasport{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", patronymic='" + patronymic + '\'' +
-                ", birthYear=" + birthYear +
-                ", pasportId=" + pasportNumber +
-                '}';
+    public Set<String> getPassportNumbers() {
+        return pasportNumbers;
     }
 
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
-    }
-
-
-    public int getPasportNumber() {
-        return pasportNumber;
-    }
-
-    public Pasport(String name, String surname, String patronymic, int birthYear) {
+    public Pasport(Set<String> pasportNumber, String name, String surname, String patronymic, String birthYear) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
         this.birthYear = birthYear;
-        pasportNumber=count++;
+        this.pasportNumbers = pasportNumber;
     }
+
+    public String print(Set<String> pasportNumber) {
+        for (String pasport1 : pasportNumber) {
+            if (pasport1.equals(pasportNumber)) {
+                return pasport1;
+            }
+        }
+        return null;
+    }
+
+    public boolean IssetNumberr(String s) {
+        return pasportNumbers.contains(s);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pasport pasport = (Pasport) o;
+        return Objects.equals(pasportNumbers, pasport.pasportNumbers) && Objects.equals(surname, pasport.surname) && Objects.equals(name, pasport.name) && Objects.equals(patronymic, pasport.patronymic);
+    }
+
+         @Override
+    public int hashCode(){
+    return Objects.hash( pasportNumbers, surname, name,patronymic, birthYear);
 }
 
+       @Override
+       public String toString() {
+           return surname + " " + name + ", дата рождения " + birthYear + ", номер паспорта " + pasportNumbers;
+       }
+
+       }
