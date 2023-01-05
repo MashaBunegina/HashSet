@@ -22,7 +22,7 @@ public class Example {
 
         @Override
         public String toString() {
-            return (number1 + " * " + number2 + " = ");
+            return (number1 + " *  " + number2 + " = ");
 
         }
     }
