@@ -32,7 +32,7 @@ public class Main {
 
     public static Pasport faing(Set<Pasport> pasportSet, String number) {
         for (Pasport pasport : pasportSet) {
-            if (pasport.IssetNumberr(number)) {
+            if (pasport.contains(number)) {
                 return pasport;
             }
         }

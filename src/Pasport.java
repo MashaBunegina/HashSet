@@ -54,7 +54,7 @@ public class Pasport {
         return null;
     }
 
-    public boolean IssetNumberr(String s) {
+    public boolean contains(String s) {
         return pasportNumbers.contains(s);
     }
 
