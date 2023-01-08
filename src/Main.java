@@ -30,7 +30,7 @@ public class Main {
         System.out.println("faing(passportSet,\"4789562BHY\") = " + faing(pasportSet, "4789562BHY"));
     }
 
-    public static Pasport faing(Set<Pasport> pasportSet, String number) {
+    public static Pasport find(Set<Pasport> pasportSet, String number) {
         for (Pasport pasport : pasportSet) {
             if (pasport.contains(number)) {
                 return pasport;
