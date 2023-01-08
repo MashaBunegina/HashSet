@@ -27,10 +27,10 @@ public class Main {
         pasportSet.add(pasport2);
         pasportSet.add(pasport3);
         System.out.println(pasportSet);
-        System.out.println("faing(passportSet,\"4789562BHY\") = " + faing(pasportSet, "4789562BHY"));
+        System.out.println("find(passportSet,\"4789562BHY\") = " + find(pasportSet, "4789562BHY"));
     }
 
-    public static Pasport find(Set<Pasport> pasportSet, String number) {
+    public static Pasport find (Set<Pasport> pasportSet, String number) {
         for (Pasport pasport : pasportSet) {
             if (pasport.contains(number)) {
                 return pasport;
