@@ -27,7 +27,7 @@ public class Main {
         pasportSet.add(pasport2);
         pasportSet.add(pasport3);
         System.out.println(pasportSet);
-        System.out.println("find(passportSet,\"4789562BHY\") = " + find(pasportSet, "4789562BHY"));
+        System.out.println("find (passportSet,\"4789562BHY\") = " + find(pasportSet, "4789562BHY"));
     }
 
     public static Pasport find (Set<Pasport> pasportSet, String number) {
