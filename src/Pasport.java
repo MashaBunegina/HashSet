@@ -6,7 +6,7 @@ public class Pasport {
     private String surname;
     private String patronymic;
     private String birthYear;
-    private Set<String> pasportNumbers;
+    private String pasportNumber;
 
     public String getName() {
         return name;
@@ -33,29 +33,22 @@ public class Pasport {
         this.surname = surname;
     }
 
-    public Set<String> getPassportNumbers() {
-        return pasportNumbers;
+    public String getPassportNumber() {
+        return pasportNumber;
     }
 
-    public Pasport(Set<String> pasportNumber, String name, String surname, String patronymic, String birthYear) {
+    public Pasport(String pasportNumber1, String name, String surname, String patronymic, String birthYear) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
         this.birthYear = birthYear;
-        this.pasportNumbers = pasportNumber;
+        this.pasportNumber = pasportNumber1;
     }
 
-    public String print(Set<String> pasportNumber) {
-        for (String pasport1 : pasportNumber) {
-            if (pasport1.equals(pasportNumber)) {
-                return pasport1;
-            }
-        }
-        return null;
-    }
+
 
     public boolean contains(String s) {
-        return pasportNumbers.contains(s);
+        return pasportNumber.contains(s);
     }
 
     @Override
@@ -63,17 +56,17 @@ public class Pasport {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pasport pasport = (Pasport) o;
-        return Objects.equals(pasportNumbers, pasport.pasportNumbers) && Objects.equals(surname, pasport.surname) && Objects.equals(name, pasport.name) && Objects.equals(patronymic, pasport.patronymic);
+        return Objects.equals(pasportNumber, pasport.pasportNumber) && Objects.equals(surname, pasport.surname) && Objects.equals(name, pasport.name) && Objects.equals(patronymic, pasport.patronymic);
     }
 
          @Override
     public int hashCode(){
-    return Objects.hash( pasportNumbers, surname, name,patronymic, birthYear);
+    return Objects.hash( pasportNumber, surname, name,patronymic, birthYear);
 }
 
        @Override
        public String toString() {
-           return surname + " " + name + ", дата рождения " + birthYear + ", номер паспорта " + pasportNumbers;
+           return surname + " " + name + ", дата рождения " + birthYear + ", номер паспорта " + pasportNumber;
        }
 
        }

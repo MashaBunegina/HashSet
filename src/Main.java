@@ -18,9 +18,9 @@ public class Main {
             System.out.println(i.next());
 
         }
-        Pasport pasport1 = new Pasport(Collections.singleton("4789562BHY"), "Анна", "Иванова", null, "10.04.1992");
-        Pasport pasport2 = new Pasport(Collections.singleton("5632488HY"), "Сергей", "Кротов", null, "12.03.1998");
-        Pasport pasport3 = new Pasport(Collections.singleton("5112345HY"), "Иван", "Зеленцов", null, "29.02.1994");
+        Pasport pasport1 = new Pasport(Collections.singleton("4789562BHY").toString(), "Анна", "Иванова", null, "10.04.1992");
+        Pasport pasport2 = new Pasport(Collections.singleton("5632488HY").toString(), "Сергей", "Кротов", null, "12.03.1998");
+        Pasport pasport3 = new Pasport(Collections.singleton("5112345HY").toString(), "Иван", "Зеленцов", null, "29.02.1994");
 
         Set<Pasport> pasportSet = new HashSet<>();
         pasportSet.add(pasport1);
